@@ -1,0 +1,211 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  // padding: 10px;
+  margin-top: 20px;
+  // background: lavender;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.home-container {
+  // margin-left: 45%;
+  // margin-top: 2rem;
+  margin: 24px 0;
+  font-size: 24px;
+  font-weight: bold;
+  background: #7c6ebb;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  margin: 1rem auto;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1850px;
+  width: 100%;
+}
+
+:host {
+  background: linear-gradient(to top, rgb(44, 43, 46), rgb(22, 20, 27));
+  min-height: 100vh;
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 10px;
+
+  .title-img {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  .subtitle-img {
+    max-width: 160px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 8px auto 0;
+  }
+}
+
+.subtitle-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 8px;
+  text-shadow: 0 0 10px #ff0000;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: 0.7rem auto;
+
+  .search-input,
+  .type-select {
+    padding: 0.5rem;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+  }
+}
+
+.type-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 0.5rem;
+  justify-content: center;
+}
+
+.type-button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.type-button:hover {
+  transform: scale(1.05);
+}
+
+.type-button.active {
+  outline: 2px solid white;
+  box-shadow: 0 0 6px white;
+}
+
+.reset-button {
+  background-color: black;
+}
+
+.type-normal {
+  background-color: #a8a878;
+}
+.type-grass {
+  background-color: #78c850;
+}
+.type-fire {
+  background-color: #f08030;
+}
+.type-water {
+  background-color: #6890f0;
+}
+.type-bug {
+  background-color: #a8b820;
+}
+.type-electric {
+  background-color: #f8d030;
+  color: black;
+}
+.type-rock {
+  background-color: #b8a038;
+}
+.type-ghost {
+  background-color: #705898;
+}
+.type-poison {
+  background-color: #a040a0;
+}
+.type-psychic {
+  background-color: #f85888;
+}
+.type-fighting {
+  background-color: #c03028;
+}
+.type-ground {
+  background-color: #e0c068;
+}
+.type-dragon {
+  background-color: #7038f8;
+}
+.type-dark {
+  background-color: #705848;
+}
+
+.search-container {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  background-color: #2e2f4f;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  margin: 0 auto;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  outline: none;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-button {
+  background-color: white;
+  border-radius: 50%;
+  border: none;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 4px;
+  margin-left: 0.5rem;
+}
+
+.search-button img {
+  width: 68px;
+  height: 38px;
+}

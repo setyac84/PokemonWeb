@@ -1,0 +1,36 @@
+<div
+  class="card"
+  (click)="openDetail()"
+  [ngStyle]="{ border: '4px solid ' + borderColor }"
+>
+  <div class="number">#{{ pokemon.id.toString().padStart(3, "0") }}</div>
+
+  <img
+    [src]="pokemon.sprites?.front_default || 'assets/placeholder-pokemon.png'"
+    [alt]="pokemon.name"
+    class="sprite"
+    (error)="handleImageError()"
+  />
+
+  <div class="name">{{ pokemon.name | titlecase }}</div>
+
+  <div class="info">
+    <!-- <span>Weight: {{ pokemon.weight }}</span>
+    <span class="divider">|</span>
+    <span>Height: {{ pokemon.height }}</span> -->
+
+    <span>Weight: {{ pokemon.weight / 10 | number : "1.1-1" }} kg</span>
+    <span class="divider">|</span>
+    <span>Height: {{ pokemon.height / 10 | number : "1.1-1" }} m</span>
+  </div>
+
+  <div class="types">
+    <span
+      class="type"
+      *ngFor="let type of pokemon.types"
+      [ngClass]="'type-' + type.type.name"
+    >
+      {{ type.type.name | titlecase }}
+    </span>
+  </div>
+</div>

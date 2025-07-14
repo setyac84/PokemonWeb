@@ -1,0 +1,45 @@
+<div class="home-header">
+  <img [src]="'./assets/pokemon.svg'" alt="" class="title-img" />
+  <h1 class="subtitle-text">Pokedex</h1>
+</div>
+
+<div class="search-container">
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="onSearchTermChange()"
+    placeholder="Search..."
+    class="search-input"
+  />
+  <button class="search-button" (click)="onSearchTermChange()">
+    <img src="/assets/poke2.png" alt="Search" />
+  </button>
+</div>
+
+<div class="filter-bar">
+  <div class="type-buttons">
+    <button
+      *ngFor="let type of types"
+      [class]="'type-button type-' + type.value.toLowerCase()"
+      [class.active]="selectedType === type.value"
+      (click)="onTypeButtonClick(type.value)"
+    >
+      {{ type.label }}
+    </button>
+
+    <button class="type-button reset-button" (click)="onTypeButtonClick('')">
+      Reset
+    </button>
+  </div>
+</div>
+
+<div class="pokemon-grid">
+  <app-pokemon-card *ngFor="let p of pokemons" [pokemon]="p"></app-pokemon-card>
+</div>
+
+<app-pagination
+  [currentPage]="currentPage"
+  [totalPages]="totalPages"
+  (pageChange)="onPageChange($event)"
+>
+</app-pagination>
